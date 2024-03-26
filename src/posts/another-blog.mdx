@@ -1,0 +1,24 @@
+---
+date: 2021-08-11
+title: My Second Blog
+description: This is my first MDX blog post.
+slug: another-blog
+---
+
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+export const query = graphql`
+  query SmashburgerQuery {
+    file(name: { eq: "smashburger" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: DOMINANT_COLOR)
+      }
+    }
+  }
+`;
+
+# Oh Dang
+
+<GatsbyImage image={getImage(props.data.file)} alt="a smashburger" />
+
+This blog is event better than the last one.
